@@ -2,11 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-          content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
     <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nerfies: Deformable Neural Radiance Fields</title>
+    <title>AffordGrasp</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -136,19 +134,26 @@
                 <h2 class="title is-2">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Inferring affordance of an object and grasping it in a task-oriented way is essential for robots
-                        to complete manipulation task. The affordance reveals where and how to grasp an object by
-                        considering object functionality, which is the foundation for task-oriented grasping. Current
-                        task-oriented methods often rely on extensive training data limited in specific tasks and
-                        objects, which struggles to generalize to novel objects and complex scenes. This paper presents
-                        a novel open-vocabulary grasping approach <b>AffordGrasp</b>, which leverages the reasoning
-                        capabilities of vision language models (VLMs) to perform in-context affordance reasoning. Unlike
-                        existing approaches that need the explicit task and object name, our method abstracts the task
-                        from the implicit user instruction, enabling better interaction with humans in daily life. Based
-                        on the reasoning results, the task-relevant object is identified and its part-level affordance
-                        is grounded with a visual grounding module. Then the task-oriented grasp poses are generated on
-                        the affordance area of the object. The effectiveness of our method is validated in both
-                        simulation and real-world experiments.
+                        Inferring the affordance of an object and grasping it in a task-oriented manner is crucial for
+                        robots to successfully complete manipulation tasks.
+                        Affordance indicates where and how to grasp an object by taking its functionality into account,
+                        serving as the foundation for effective task-oriented grasping.
+                        However, current task-oriented methods often depend on extensive training data that is confined
+                        to specific tasks and objects, making it difficult to generalize to novel objects and complex
+                        scenes.
+                        In this paper, we introduce <b>AffordGrasp</b>, a novel open-vocabulary grasping
+                        framework that leverages the reasoning capabilities of vision-language models (VLMs) for
+                        in-context affordance reasoning. Unlike existing methods that rely on explicit task and object
+                        specifications, our approach infers tasks directly from implicit user instructions, enabling
+                        more intuitive and seamless human-robot interaction in everyday scenarios.
+                        Building on the reasoning outcomes, our framework identifies task-relevant objects and grounds
+                        their part-level affordances using a visual grounding module. This allows us to generate
+                        task-oriented grasp poses precisely within the affordance regions of the object, ensuring both
+                        functional and context-aware robotic manipulation.
+                        Extensive experiments demonstrate that <b>AffordGrasp</b> achieves state-of-the-art
+                        performance in both simulation and real-world scenarios, highlighting the effectiveness of our
+                        method. We believe our approach advances robotic manipulation techniques and contributes to the
+                        broader field of embodied AI.
                     </p>
                 </div>
             </div>
@@ -166,9 +171,23 @@
                             alt="pipeline image"
                     />
                 </div>
-                <p>
-                    <b>Fig.2</b>
-                </p>
+                <div class="content has-text-justified">
+                    <br>
+                    <p>
+                        <b>Overall Framework of AffordGrasp.</b>
+                        The framework processes user instructions and RGB-D scene observations to achieve
+                        open-vocabulary task-oriented grasping in clutter. We leverage GPT-4o for in-context affordance
+                        reasoning, decomposing the process into three steps:
+                        (1) Extracting the task goal and functional requirements from implicit user instructions (e.g.,
+                        "I want to scoop something").
+                        (2) Identifying the most task-relevant object in the RGB image (e.g., a wooden spoon).
+                        (3) Decomposing the object into functional parts and selecting the optimal graspable part (e.g.,
+                        the handle) based on its affordances.
+                        Based on the reasoning results, a visual affordance grounding module grounds the inferred object
+                        and part affordances into pixel-level masks. With the affordance mask and RGB-D images, we
+                        employ AnyGrasp to generate task-oriented 6D grasp poses on the target part.
+                    </p>
+                </div>
             </div>
         </div>
         <hr>
@@ -202,9 +221,10 @@
                             alt="pipeline image"
                     />
                 </div>
+                <br>
                 <p>
-                    <b>The examples in real-world experiments, where the visualization of affordance grounding and
-                        task-oriented grasp pose generation are provided.</b>
+                    The examples in <b>real-world experiments</b>, where the visualization of affordance grounding and
+                    task-oriented grasp pose generation are provided.
                 </p>
             </div>
         </div>
@@ -321,8 +341,10 @@
                     />
                 </div>
                 <p>
-                    <b>The cases of cluttered grasping in simulation. The affordances of target object are labeled with
-                        red stars.</b>
+                    <br>
+                    The cases of cluttered grasping in <b>simulation.</b>
+                    <br>
+                    The <b>affordances</b> of target object are labeled with red stars.
                 </p>
             </div>
         </div>
