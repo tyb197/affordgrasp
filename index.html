@@ -20,6 +20,70 @@
         gtag('config', 'G-PYVRSFMDRL');
     </script>
 
+    <style>
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .card-0 {
+            display: contents;
+        }
+        
+        .card.card-1 {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-image {
+            flex-grow: 1;
+        }
+        
+        .card-image video {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .card-content {
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .prompt {
+            font-size: 14px;
+            line-height: 1.4;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .single-column-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+        
+        .single-column-container .card-image video {
+            height: 600px;
+            object-fit: contain;
+            background: #f8f9fa;
+        }
+
+        .single-column-container .card-content {
+            padding: 15px;
+            min-height: 60px;
+        }
+    </style>
+
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
           rel="stylesheet">
 
@@ -233,63 +297,92 @@
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-2">RealWorld Experiment Videos</h2>
-                <div class="item"
-                     style="display: flex; justify-content: center; align-items: center; gap: 15%;padding: 0 25%">
-                    <!-- 视频 1 -->
-                    <video id="bottle"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/bottle.mp4" type="video/mp4">
-                    </video>
-                    <!-- 视频 2 -->
-                    <video id="kettle"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/kettle.mp4" type="video/mp4">
-                    </video>
-                    <!-- 视频 3 -->
-                    <video id="knife"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/knife.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br>
-                <br>
-                <div class="item"
-                     style="display: flex; justify-content: center; align-items: center; gap: 15%;padding: 0 25%">
-                    <!-- 视频 1 -->
-                    <video id="mug"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/mug.mp4" type="video/mp4">
-                    </video>
-                    <!-- 视频 2 -->
-                    <video id="pan"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/pan.mp4" type="video/mp4">
-                    </video>
-                    <!-- 视频 3 -->
-                    <video id="racket"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/racket.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <br>
-                <br>
-                <div class="item"
-                     style="display: flex; justify-content: center; align-items: center; gap: 15%;padding: 0 25%">
-                    <!-- 视频 1 -->
-                    <video id="screwdriver"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/screwdriver.mp4" type="video/mp4">
-                    </video>
-                    <!-- 视频 2 -->
-                    <video id="spatula"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/spatula.mp4" type="video/mp4">
-                    </video>
-                    <!-- 视频 3 -->
-                    <video id="spoon"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/iros_demo/spoon.mp4" type="video/mp4">
-                    </video>
+
+                <div class="cards-container">
+                    <!-- 第一行 -->
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/bottle.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I am thirsty.'</div>
+                        </div>
+                    </div>
+
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/mug.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to drink some coffee.'</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/kettle.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to boil some water.'</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二行 -->
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/racket.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to play a sport.'</div>
+                        </div>
+                    </div>
+
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/pan.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to cook pancakes, please help me to choose the right cookware.'</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/spatula.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I need to flip something when I am cooking.'</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第三行 -->
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/spoon.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to scoup something, please help me to choose the right tool.'</div>
+                        </div>
+                    </div>
+
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/knife.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to cut some fruits, please help me to choose the right tool.'</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/iros_demo/screwdriver.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I need to tighten screws, please help me to choose the right tool.'</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -354,25 +447,36 @@
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-2">Simulation Experiment Videos</h2>
-                <div class="item"
-                     style="display: flex; justify-content: center; align-items: center; gap: 15%;padding: 0 25%">
-                    <!-- 视频 1 -->
-                    <video id="simulation_hammer"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/simulation_hammer.mp4" type="video/mp4">
-                    </video>
 
-                    <!-- 视频 2 -->
-                    <video id="simulation_screwdriver"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/simulation_screwdriver.mp4" type="video/mp4">
-                    </video>
-
-                    <!-- 视频 3 -->
-                    <video id="simulation_spoon"  controls muted loop playsinline
-                           style="width: 100%; height: auto; max-width: 100%;">
-                        <source src="./static/videos/simulation_spoon.mp4" type="video/mp4">
-                    </video>
+                <div class="single-column-container">
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/simulation_hammer.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to hammer nails.'</div>
+                        </div>
+                    </div>
+                    <br>
+                
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/simulation_screwdriver.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to tighten screws.'</div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="card card-1">
+                        <div class="card-image">
+                            <video class="lazy" autoplay loop muted><source src="./static/videos/simulation_spoon.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt">'I want to drink soup.'</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
